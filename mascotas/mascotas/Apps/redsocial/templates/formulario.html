@@ -1,0 +1,66 @@
+{% extends "base_generic.html"  %}
+{% block content %}
+
+
+<section id="contact">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Únete a Dooggosalvatagio</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">Si quieres saber mas de nosotros rellena este apartado y contáctanos</p>
+        </div>
+      </div>
+
+
+        <div class="col-md-8 col-md-push-2">
+          <div class="form">
+            <div id="sendmessage">Tu mensaje se a enviando Correctamente. Gracias!</div>
+            <div id="errormessage"></div>
+            <form action="" class="formusuarios" id="formusuarios" method="POST" role="form">
+                {% csrf_token %}
+              <div class="form-group">
+                {{form.Rut }}           
+                 <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Nombre }}                
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Apellidop }}                
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Direccion }}
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Contraseña }}
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Email }}
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Edad }}
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{form.Tipo_usuario }}
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Registrarse</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{{mensaje}}
+
+
+    
+{% endblock %}

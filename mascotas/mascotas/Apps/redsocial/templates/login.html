@@ -1,0 +1,52 @@
+<html>
+{% load static %}
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style type="text/css">
+	
+#cuadro{
+	
+margin-top: 2%;text-align: center;
+border-bottom: 6px solid rgb(76, 160, 240);
+border-right: 6px solid rgb(117, 242, 247);     
+background-color: rgba(255, 253, 253, 0.281);
+width: 80%;
+box-shadow: 10px 10px 8px #888888;
+height: 80%;
+}
+#f1{
+
+}
+.form-control{
+	
+
+	
+}
+</style>
+	
+	<title> Iniciar sesion</title>
+<body background="{% static 'images/fondo.jpg' %}">
+	<div class="container rounded" id="cuadro">
+
+
+<div class="col"    id="f1">
+    <div  class="row">
+    	<input style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Usuario">
+    </div>
+    <div class="row">
+    	<input style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Contraseña"></div>
+    	<div style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" class="row" >
+    		<button style=" margin-right: 10%;"  type="button" class="btn btn-primary">Iniciar sesion</button>
+    		<a href="/formulario"class="btn btn-secondary">Registrate</a>
+    	</div>
+   
+  </div>
+</div>
+
+	</div>
+
+</body>
+</html>
