@@ -5,6 +5,103 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script type="text/javascript">
+function cambiarcolor(){
+if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' %}")
+{
+ document.getElementById('cuerpa').background="{% static 'images/fondo2.jpg' %}";
+ document.getElementById('txtrut').style.backgroundColor='black';
+ document.getElementById('txtrut').style.color='white';
+  document.getElementById('txtcon').style.backgroundColor='black';
+  document.getElementById('txtcon').style.color='white';
+
+}
+else
+{
+document.getElementById('cuerpa').background="{% static 'images/fondo.jpg' %}";
+document.getElementById('txtrut').style.backgroundColor='white';
+  document.getElementById('txtcon').style.backgroundColor='white';
+  document.getElementById('txtcon').style.color='black';
+   document.getElementById('txtrut').style.color='black';
+}
+
+
+ 
+}
+
+
+
+
+
+   function redireccionar(){
+var sel = document.getElementById("combo"); 
+var sel2 = document.getElementById("comboc"); 
+var l = false;
+for (var i = 0; i < sel.length; i++) {
+    var opt = sel[i];
+    var opt2= sel2[i];
+
+if(opt.value == document.getElementById('txtrut').value &&
+ opt2.value == document.getElementById('txtcon').value ){
+l=true;
+
+document.getElementById("mensajeerror").hidden=true;}
+
+}
+   if(l==true){
+    var valor=document.getElementById("txtrut").value;
+    document.location.href="http://127.0.0.1:8000/redsocial/"+valor+"/";}
+else
+{
+    document.getElementById("mensajeerror").hidden=false;
+}
+
+}
+
+function desaparecer(){
+document.getElementById("mensajeerror").hidden=true;
+document.getElementById("txtrut").hidden=true;
+document.getElementById("txtcon").hidden=true;
+document.getElementById("botoni").hidden=true;
+document.getElementById("botonr").hidden=true;
+
+document.getElementById("botonr2").hidden=false;
+document.getElementById("botoni2").hidden=false;
+document.getElementById("ho").hidden=false;
+document.getElementById("t1").hidden=false;
+document.getElementById("t2").hidden=false;
+document.getElementById("t3").hidden=false;
+document.getElementById("t4").hidden=false;
+document.getElementById("t5").hidden=false;
+document.getElementById("t6").hidden=false;
+document.getElementById("t7").hidden=false;
+document.getElementById("t8").hidden=false;
+document.getElementById("t9").hidden=false;
+    
+}
+
+function aparecer(){
+document.getElementById("mensajeerror").hidden=true;
+document.getElementById("txtrut").hidden=false;
+document.getElementById("txtcon").hidden=false;
+document.getElementById("botoni").hidden=false;
+document.getElementById("botonr").hidden=false;
+
+document.getElementById("botonr2").hidden=true;
+document.getElementById("botoni2").hidden=true;
+document.getElementById("ho").hidden=true;
+document.getElementById("t1").hidden=true;
+document.getElementById("t2").hidden=true;
+document.getElementById("t3").hidden=true;
+document.getElementById("t4").hidden=true;
+document.getElementById("t5").hidden=true;
+document.getElementById("t6").hidden=true;
+document.getElementById("t7").hidden=true;
+document.getElementById("t8").hidden=true;
+document.getElementById("t9").hidden=true;
+    
+}
+</script>
 <style type="text/css">
 	
 #cuadro{
@@ -28,18 +125,35 @@ height: 80%;
 </style>
 	
 	<title> Iniciar sesion</title>
-<body background="{% static 'images/fondo.jpg' %}">
+<body id="cuerpa" background="{% static 'images/fondo.jpg' %}">
+     <button class="rounded" onclick="cambiarcolor()" > <img width="20" height="20" src="https://w7.pngwing.com/pngs/842/877/png-transparent-computer-icons-others-miscellaneous-text-sunlight.png"></button>
 	<div class="container rounded" id="cuadro">
+        <select hidden id="combo">
+{% if dueños  %}
+{% for x in dueños %}
+ <option value="{{x.Rut}}" >{{x.Rut}}</option>   
+{% endfor %}
+{% endif %}
+</select>
+
+<select hidden id="comboc">
+{% if dueños  %}
+{% for x in dueños %}
+ <option value="{{x.Contraseña}}" >{{x.Contraseña}}</option>   
+{% endfor %}
+{% endif %}
+</select>
 
 
 <div class="col"    id="f1">
+    <h6 id="mensajeerror" hidden="true" style="font-size: 28px; text-align: center; padding-top:  40px; color: gray;  ">El Rut o la contraseña son incorrectos</h6>
     <div  class="row">
-    	<input style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Usuario">
+    	<input id="txtrut" style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Usuario">
     </div>
     <div class="row">
-    	<input style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Contraseña"></div>
+    	<input id="txtcon" style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Contraseña"></div>
     	<div style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" class="row" >
-    		<button style=" margin-right: 10%;"  type="button" class="btn btn-primary">Iniciar sesion</button>
+    		<button style=" margin-right: 10%;" onclick="redireccionar()"  type="button" class="btn btn-primary">Iniciar sesion</button>
     		<a href="/formulario#nav-menu-container"class="btn btn-secondary">Registrate</a>
     	</div>
    
