@@ -4,7 +4,7 @@ from .models import Usuario, Pet
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .forms import FormUsuarios
+from .forms import FormUsuarios, FormPet
 
 
 # Create your views here.
@@ -12,15 +12,6 @@ def usuario(request):
     data = {
         'form': FormUsuarios()  
     }
-
-    if request.method == 'POST':
-        formulario = FormUsuarios(data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            data['mensaje'] = 'Registrado correctamente'
-        else:
-            data['form'] = formulario
-    
     return render(request,'formulario.html', data )
 
 def index(request):
@@ -60,17 +51,8 @@ def login(request):
 
     return render(request, 'login.html', )
 
-def pet(request):
+def pet_form(request):
     data = {
         'formu': FormPet()  
     }
-
-    if request.method == 'POST':
-        formu_pet = FormPet(data=request.POST)
-        if formu_pet.is_valid():
-            formu_pet.save()
-            data['mensaje'] = 'Registrado correctamente'
-        else:
-            data['form'] = formu_pet
-    
     return render(request,'p_usuario.html', data )

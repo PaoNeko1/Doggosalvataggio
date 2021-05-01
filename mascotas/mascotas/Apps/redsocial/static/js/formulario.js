@@ -15,5 +15,9 @@ $(document).ready(function(){
     $('#id_Edad').prop('class','form-control')
     $('#id_Edad').prop('placeholder','Ingresa tu Edad')
     $('#id_Tipo_usuario').prop('class','form-control')
-    $('#id_Tipu_usuario').prop('placeholder','Ingresa tu Usuario')
+    $('#id_Tipo_usuario').prop('placeholder','Ingresa tu Usuario')
+    $('#id_Tipo').prop('class','form-control')
+    $('#id_Tipo').prop('placeholder','Ingresa la especie')
+
+    alert('jesu te amo')
 });

@@ -1,6 +1,50 @@
 {% extends "base_generic.html"  %}
 {% block content %}
-    
 
+
+
+
+<!--FORMULARIO AGREGAR MASCOTA-->
+<section id="contact">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 id="titu_formu" class="section-title">Agrega a tu mascota!</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">Si quieres unirte a esta comunidad solo rellena los campos a continuación.</p>
+        </div>
+      </div>
+
+
+        <div class="col-md-8 col-md-push-2">
+          <div class="form">
+            <div id="sendmessage">Has registrado a tu mascota correctamente!.</div>
+            <div id="errormessage"></div>
+            <form action="" class="formu" id="formu" method="POST" role="form">
+                {% csrf_token %}
+              <div class="form-group">
+                {{formu.Nombre }}           
+                 <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{formu.Tipo }}                
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{formu.Amo}}                
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                {{formu.foto }}
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Registrarse</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 {% endblock %}
