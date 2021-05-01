@@ -56,4 +56,21 @@ def contacto(request):
 
     return render(request, 'contacto.html', )
 
+def login(request):
 
+    return render(request, 'login.html', )
+
+def pet(request):
+    data = {
+        'formu': FormPet()  
+    }
+
+    if request.method == 'POST':
+        formu_pet = FormPet(data=request.POST)
+        if formu_pet.is_valid():
+            formu_pet.save()
+            data['mensaje'] = 'Registrado correctamente'
+        else:
+            data['form'] = formu_pet
+    
+    return render(request,'p_usuario.html', data )
