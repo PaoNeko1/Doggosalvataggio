@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+	<title></title>
+
+	<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script type="text/javascript">
+
+function cambiarcolor(){
+if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' %}")
+{
+ document.getElementById('cuerpa').background="{% static 'images/fondo2.jpg' %}";
+ 
+  document.getElementById('sols').src="{% static 'images/sol.png' %}";
+  document.getElementById('sols').style.border='black 2px solid'
+  document.getElementById('infou').style.color='white'
+  document.getElementById('tmasc').style.color='white'
+
+}
+else
+{
+document.getElementById('cuerpa').background="{% static 'images/fondo.jpg' %}";
+
+   document.getElementById('sols').src="{% static 'images/wsol.png' %}";
+    document.getElementById('sols').style.border='white 2px solid'
+    document.getElementById('infou').style.color='black'
+    document.getElementById('tmasc').style.color='black'
+}
+
+
+ 
+}
+
+
+ 
+
+</script>	
+
+<style type="text/css">
+.cuadro{
+	
+margin-top: 2%;text-align: left;
+border-bottom: 6px solid rgb(76, 160, 240);
+border-right: 6px solid rgb(117, 242, 247);     
+background-color: rgba(255, 253, 253, 0.281);
+width: 50%;
+box-shadow: 10px 10px 8px #888888;
+height: 80%;
+}	
+.cuadro2{
+	
+margin-top: 2%;text-align: left;
+
+width: 50%;
+
+height: 80%;
+}	
+
+</style>	
+<body id="cuerpa" background="{% static 'images/fondo.jpg' %}">
+
+
+<div id="infou">
+	{{due.Nombre}}
+	{{due.nombre2}}
+	{{due.Apellidop}}
+	{{due.Apellidom}}
+	{{due.Rut}}
+</div>	
+
+<img id="sols" style=" margin-left: 20px; cursor: pointer; border-radius: 50%;  border: white 2px solid;" onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
+
+<div class="container cuadro2" style="text-align: right;" >
+	<button class="rounded circle"><img class="rounded circle
+		" width="50" height="50" src="https://image.flaticon.com/icons/png/512/2741/2741742.png"></button>
+</div>	
+<h1 id="tmasc" style="text-align: center;" >Mascotas</h1>
+
+{% for f in mascotas %}
+<div class="container cuadro">
+<h5>Nombre: {{f.Nombre}}</h5>
+<h5>Tipo: {{f.Tipo}}</h5>
+<img  src="{{f.foto.url}}" height="100" width="100">
+</div>
+{% endfor %}
+
+</body>
+</html>

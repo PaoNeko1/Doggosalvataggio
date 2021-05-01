@@ -14,6 +14,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT_DIR = "media"
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, MEDIA_ROOT_DIR))
+MEDIA_URL = "/media/"
 
 
 # Quick-start development settings - unsuitable for production

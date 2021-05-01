@@ -21,7 +21,6 @@ class Pet(models.Model):
 	Nombre = models.CharField(max_length=20)
 	Tipo   = models.CharField(max_length=8)
 	Amo    = models.ForeignKey(Usuario,null=False,blank=False,on_delete=models.PROTECT) 
-	foto   = models.ImageField(upload_to='C:/mascotas/mascotas/Apps/redsocial/fp',
-	default='C:/mascotas/mascotas/Apps/redsocial/fp/fondo.jpg')
+	foto   = models.ImageField(upload_to='mascotas',null=True)
 	def __str__(self):
 		return self.Nombre
