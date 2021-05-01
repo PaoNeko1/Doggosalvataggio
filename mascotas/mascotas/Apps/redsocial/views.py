@@ -58,7 +58,7 @@ def contacto(request):
 
 def login(request):
 
-    return render(request, 'login.html', )
+    return index(request)
 
 def pet(request):
     data = {
@@ -74,3 +74,9 @@ def pet(request):
             data['form'] = formu_pet
     
     return render(request,'p_usuario.html', data )
+
+def resultado(request,rut):
+	pe= Usuario.objects.get(Rut=rut)
+	mas= Pet.objects.filter(Amo=rut)
+	context = {'due': pe,'mascotas':mas}
+	return render(request, 'resultado.html', context)

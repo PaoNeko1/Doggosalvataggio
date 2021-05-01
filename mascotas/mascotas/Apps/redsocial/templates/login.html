@@ -50,7 +50,7 @@ document.getElementById("mensajeerror").hidden=true;}
 }
    if(l==true){
     var valor=document.getElementById("txtrut").value;
-    document.location.href="http://127.0.0.1:8000/redsocial/"+valor+"/";}
+    document.location.href="res/"+valor+"/";}
 else
 {
     document.getElementById("mensajeerror").hidden=false;
@@ -128,17 +128,17 @@ height: 80%;
 <body id="cuerpa" background="{% static 'images/fondo.jpg' %}">
      <button class="rounded" onclick="cambiarcolor()" > <img width="20" height="20" src="https://w7.pngwing.com/pngs/842/877/png-transparent-computer-icons-others-miscellaneous-text-sunlight.png"></button>
 	<div class="container rounded" id="cuadro">
-        <select hidden id="combo">
-{% if dueños  %}
-{% for x in dueños %}
+        <select hidden  id="combo">
+{% if usuario  %}
+{% for x in usuario %}
  <option value="{{x.Rut}}" >{{x.Rut}}</option>   
 {% endfor %}
 {% endif %}
 </select>
 
-<select hidden id="comboc">
-{% if dueños  %}
-{% for x in dueños %}
+<select hidden  id="comboc">
+{% if usuario  %}
+{% for x in usuario %}
  <option value="{{x.Contraseña}}" >{{x.Contraseña}}</option>   
 {% endfor %}
 {% endif %}
