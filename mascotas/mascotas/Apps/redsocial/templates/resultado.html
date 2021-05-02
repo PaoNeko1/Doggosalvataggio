@@ -8,6 +8,14 @@
 
 <script type="text/javascript">
 
+function saves(){
+
+
+
+
+	
+}	
+
 function cambiarcolor(){
 if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' %}")
 {
@@ -17,7 +25,13 @@ if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' 
   document.getElementById('sols').style.border='black 2px solid';
   document.getElementById('infou').style.color='white';
   document.getElementById('infou').style.backgroundColor='rgba(0,1,1,0.5)';
+  document.getElementById('txtnom').style.color='white';
+  document.getElementById('txtnom').style.backgroundColor='black';
+   document.getElementById('ifile').style.color='white';
+  document.getElementById('ifile').style.backgroundColor='black';
   document.getElementById('tmasc').style.color='white';
+  document.getElementById('lotro').style.color='white';
+  document.getElementById('ltipo').style.color='white';
   document.getElementById('formulario').style.backgroundColor='rgba(0,1,1,0.5)';
 
 var sel = document.getElementById("combo");  
@@ -31,14 +45,20 @@ document.getElementById(opt.value).style.color='white';
 }
 else
 {
-document.getElementById('cuerpa').background="{% static 'images/fondo.jpg' %}";
+document.getElementById('cuerpa').background="{% static 'images/fondo1.jpg' %}";
 
    document.getElementById('sols').src="{% static 'images/wsol.png' %}";
     document.getElementById('sols').style.border='white 2px solid'
     document.getElementById('infou').style.color='black';
     document.getElementById('infou').style.backgroundColor='rgba(250, 223, 223,0.4)';
     document.getElementById('formulario').style.backgroundColor='rgba(250, 223, 223,0.4)';
+    document.getElementById('txtnom').style.color='black';
+  document.getElementById('txtnom').style.backgroundColor='white';
+   document.getElementById('ifile').style.color='black';
+  document.getElementById('ifile').style.backgroundColor='white';
     document.getElementById('tmasc').style.color='black';
+    document.getElementById('lotro').style.color='black';
+  document.getElementById('ltipo').style.color='black';
 
 var sel = document.getElementById("combo");  
 var l = false;
@@ -57,10 +77,12 @@ document.getElementById(opt.value).style.color='black';
 function aparecerform(){
 if(document.getElementById('formulario').hidden==true){
 document.getElementById('formulario').hidden=false;
+document.getElementById('btnform').src="{% static 'images/crossico.png' %}";
 }
 else
 {
 document.getElementById('formulario').hidden=true;	
+document.getElementById('btnform').src="{% static 'images/plusico.png' %}";
 }	
 
 }
@@ -89,7 +111,7 @@ height: 80%;
 }	
 
 </style>	
-<body id="cuerpa" background="{% static 'images/fondo.jpg' %}">
+<body id="cuerpa" background="{% static 'images/fondo1.jpg' %}">
 	     <select hidden  id="combo">
 {% if mascotas  %}
 {% for x in mascotas %}
@@ -112,21 +134,28 @@ height: 80%;
 <img id="sols" style=" margin-left: 20px; cursor: pointer; border-radius: 50%;  border: white 2px solid;" onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
 
 <div class="container cuadro2" style="text-align: right;" >
-	<img onclick="aparecerform()" style="border-radius: 50%;  cursor: pointer;" class="rounded circle
-		" width="50" height="50" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
+	<img id="btnform" onclick="aparecerform()" style="border-radius: 50%;  cursor: pointer;" class="rounded circle
+		" width="50" height="50" src="{% static 'images/plusico.png' %}">
 </div>	
 <h1 id="tmasc" style="text-align: center;" >Mascotas</h1>
 
 <div hidden class="container cuadro"  id="formulario">
+	<br>
 	<input id="txtnom"  type="text" class="form-control" placeholder="Nombre">
 	<br>
+	<label id="ltipo">Tipo de mascota</label>
+	<br>
 	<input type="radio" name="raded">
-	<img height="10" width="10" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
+	<img height="25" width="25" src="{% static 'images/perroico.png' %}">
 	<input type="radio" name="raded">
-	<img height="10" width="10" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
+	<img height="25" width="25" src="{% static 'images/gatoico.png' %}">
 	<input type="radio" name="raded">
-	<img height="10" width="10" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
-	<input   type="file" class="form-control" >
+	<label id="lotro">Otro</label>
+	<input id="ifile"   type="file" class="form-control" >
+	<img hidden width="20" height="20" src="{% static 'images/gatoico.png' %}">
+	<br>
+	<button style=" margin-right: 10%;" onclick="saves()"  type="button" class="btn btn-primary">Guardar</button>
+	<br>
 </div>
 
 {% for f in mascotas %}
