@@ -54,7 +54,7 @@ document.getElementById("mensajeerror").hidden=true;}
 }
    if(l==true){
     var valor=document.getElementById("txtrut").value;
-    document.location.href="res/"+valor+"/";}
+    document.location.href="/res/"+valor+"/";}
 else
 {
     document.getElementById("mensajeerror").hidden=false;
@@ -131,6 +131,7 @@ height: 80%;
 	<title> Iniciar sesion</title>
 <body id="cuerpa"  background="{% static 'images/fondo.jpg' %}">
      <img id="sols" style=" margin-left: 20px;  position: absolute; border-radius: 50%;cursor: hand;   border: white 2px solid; " onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
+
 	<div class="container rounded" id="cuadro">
         <select hidden  id="combo">
 {% if usuario  %}
@@ -152,7 +153,7 @@ height: 80%;
 <div class="col"    id="f1">
     <h6 id="mensajeerror" hidden="true" style="font-size: 28px; text-align: center; padding-top:  40px; color: gray;  ">El Rut o la contraseña son incorrectos</h6>
     <div  class="row">
-    	<input id="txtrut" style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Usuario">
+    	<input id="txtrut" style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Rut">
     </div>
     <div class="row">
     	<input id="txtcon" style="margin-top: 10%; margin-left: 20%; margin-right: 20%;" type="text" class="form-control" placeholder="Contraseña"></div>

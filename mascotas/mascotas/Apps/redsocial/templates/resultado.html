@@ -14,9 +14,19 @@ if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' 
  document.getElementById('cuerpa').background="{% static 'images/fondo2.jpg' %}";
  
   document.getElementById('sols').src="{% static 'images/sol.png' %}";
-  document.getElementById('sols').style.border='black 2px solid'
-  document.getElementById('infou').style.color='white'
-  document.getElementById('tmasc').style.color='white'
+  document.getElementById('sols').style.border='black 2px solid';
+  document.getElementById('infou').style.color='white';
+  document.getElementById('infou').style.backgroundColor='rgba(0,1,1,0.5)';
+  document.getElementById('tmasc').style.color='white';
+  document.getElementById('formulario').style.backgroundColor='rgba(0,1,1,0.5)';
+
+var sel = document.getElementById("combo");  
+var l = false;
+for (var i = 0; i < sel.length; i++) {
+    var opt = sel[i];
+document.getElementById(opt.value).style.backgroundColor='rgba(0,1,1,0.5)';
+document.getElementById(opt.value).style.color='white';
+}
 
 }
 else
@@ -25,15 +35,35 @@ document.getElementById('cuerpa').background="{% static 'images/fondo.jpg' %}";
 
    document.getElementById('sols').src="{% static 'images/wsol.png' %}";
     document.getElementById('sols').style.border='white 2px solid'
-    document.getElementById('infou').style.color='black'
-    document.getElementById('tmasc').style.color='black'
+    document.getElementById('infou').style.color='black';
+    document.getElementById('infou').style.backgroundColor='rgba(250, 223, 223,0.4)';
+    document.getElementById('formulario').style.backgroundColor='rgba(250, 223, 223,0.4)';
+    document.getElementById('tmasc').style.color='black';
+
+var sel = document.getElementById("combo");  
+var l = false;
+for (var i = 0; i < sel.length; i++) {
+    var opt = sel[i];
+document.getElementById(opt.value).style.backgroundColor='rgba(250, 223, 223,0.4)';
+document.getElementById(opt.value).style.color='black';
+}
+
 }
 
 
  
 }
 
+function aparecerform(){
+if(document.getElementById('formulario').hidden==true){
+document.getElementById('formulario').hidden=false;
+}
+else
+{
+document.getElementById('formulario').hidden=true;	
+}	
 
+}
  
 
 </script>	
@@ -44,7 +74,7 @@ document.getElementById('cuerpa').background="{% static 'images/fondo.jpg' %}";
 margin-top: 2%;text-align: left;
 border-bottom: 6px solid rgb(76, 160, 240);
 border-right: 6px solid rgb(117, 242, 247);     
-background-color: rgba(255, 253, 253, 0.281);
+background-color: rgba(250, 223, 223,0.4);
 width: 50%;
 box-shadow: 10px 10px 8px #888888;
 height: 80%;
@@ -60,29 +90,50 @@ height: 80%;
 
 </style>	
 <body id="cuerpa" background="{% static 'images/fondo.jpg' %}">
+	     <select hidden  id="combo">
+{% if mascotas  %}
+{% for x in mascotas %}
+ <option value="{{x.Nombre}}" >{{x.Rut}}</option>   
+{% endfor %}
+{% endif %}
+</select>
 
 
-<div id="infou">
+<div class="rounded" style="display:inline-block; padding-right: 20px; padding-left: 10px; background-color:rgba(250, 223, 223,0.4);" id="infou">
 	{{due.Nombre}}
 	{{due.nombre2}}
 	{{due.Apellidop}}
 	{{due.Apellidom}}
 	{{due.Rut}}
+	<img width="20" height="20" src="{% static 'images/userico.png' %}">
 </div>	
+<br>
 
 <img id="sols" style=" margin-left: 20px; cursor: pointer; border-radius: 50%;  border: white 2px solid;" onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
 
 <div class="container cuadro2" style="text-align: right;" >
-	<button class="rounded circle"><img class="rounded circle
-		" width="50" height="50" src="https://image.flaticon.com/icons/png/512/2741/2741742.png"></button>
+	<img onclick="aparecerform()" style="border-radius: 50%;  cursor: pointer;" class="rounded circle
+		" width="50" height="50" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
 </div>	
 <h1 id="tmasc" style="text-align: center;" >Mascotas</h1>
 
+<div hidden class="container cuadro"  id="formulario">
+	<input id="txtnom"  type="text" class="form-control" placeholder="Nombre">
+	<br>
+	<input type="radio" name="raded">
+	<img height="10" width="10" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
+	<input type="radio" name="raded">
+	<img height="10" width="10" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
+	<input type="radio" name="raded">
+	<img height="10" width="10" src="https://image.flaticon.com/icons/png/512/2741/2741742.png">
+	<input   type="file" class="form-control" >
+</div>
+
 {% for f in mascotas %}
-<div class="container cuadro">
+<div id="{{f.Nombre}}" class="container cuadro">
 <h5>Nombre: {{f.Nombre}}</h5>
 <h5>Tipo: {{f.Tipo}}</h5>
-<img  src="{{f.foto.url}}" height="100" width="100">
+<img  style="border-radius: 20%; border: silver 5px solid;"  src="{{f.foto.url}}" height="100" width="100">
 </div>
 {% endfor %}
 
