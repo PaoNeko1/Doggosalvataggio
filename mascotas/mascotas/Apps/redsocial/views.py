@@ -1,10 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from .models import Usuario, Pet
+from .models import Usuario, Pet, Comentario
+from django.urls import reverse_lazy
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .forms import FormUsuarios, FormPet
+from .forms import FormUsuarios, FormPet, FormComentario
 
 
 # Create your views here.
@@ -34,18 +35,32 @@ def inicio(request):
 
     return render(request, 'index.html', )
 
+
+#informacion ANIMALES
+
 def college(request):
 
     return render(request, 'college.html', )
 
 
+def veterinarios(request):
+
+    return render(request, 'veterinarios.html', )
+
+
+def animalcosas(request):
+
+    return render(request, 'animalcosas.html', )
+
 def testimonio(request):
 
     return render(request, 'testimonio.html', )
 
+
 def contacto(request):
 
     return render(request, 'contacto.html', )
+
 
 def login(request):
 
@@ -71,3 +86,21 @@ def resultado(request,rut):
 	mas= Pet.objects.filter(Amo=rut)
 	context = {'due': pe,'mascotas':mas}
 	return render(request, 'resultado.html', context)
+
+
+    #comentario o testimonio
+    
+def comentario_form(request):
+    data = {
+        'formu1': FormComentario()  
+    }
+    if request.method == 'POST':
+        formu1_comentario = FormComentario(data=request.POST)
+        if formu1_comentario.is_valid():
+            formu1_comentario.save()
+            data['mensaje'] = 'Comentario Registrado correctamente'
+        else:
+            data['form'] = formu1_comentario
+    
+    return render(request,'comentario.html', data )
+

@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 opcion_usuario = [
@@ -11,8 +12,8 @@ class Usuario(models.Model):
 	Apellidop  = models.CharField(max_length=20,null=True)
 	Direccion  = models.CharField(max_length=80,null=True) 
 	Contraseña = models.CharField(max_length=40,null=True) 
-	Email      = models.CharField(max_length=80,default='gmail') 
-	Edad       = models.IntegerField(null=True,default=0)
+	Email      = models.CharField(max_length=80) 
+	Edad       = models.IntegerField(null=True)
 	Tipo_usuario = models.IntegerField(choices=opcion_usuario)
 	def __str__(self):
 		return self.Nombre
@@ -24,3 +25,12 @@ class Pet(models.Model):
 	foto   = models.ImageField(upload_to='mascotas',null=True)
 	def __str__(self):
 		return self.Nombre
+
+class Comentario(models.Model):
+	Nombre  = models.ForeignKey(Usuario,null=False,blank=False,on_delete=models.PROTECT) 
+	descripcion = models.CharField(max_length=50,null=True)
+	comentario = models.TextField(max_length=1000,null=True)
+	def __str__(self):
+		return self.Nombre
+
+

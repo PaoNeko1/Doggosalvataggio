@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<div class="container cuerpo" style="margin-bottom: -2%;">
+	<br><br>
+	<div class="letra-cuerpo">
+	<h1>Comentarios</h1>
+	<br>
+	{% if comentario_list %}
+		<ul>
+
+			{% for coment in comentario_list %}
+			<li>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Descripcion: <a href="{{coment.get_absolute_url}}"> {{ coment.descripcion }} </a></p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Comentario: {{coment.comentario}}</p><br><br><br><br><br><br><br><br>
+			</li>
+			{% endfor %}
+		
+		</ul>
+	{% else %}
+		
+		<p class="letra-cuerpo">No se han registrado comentarios</p><br><br><br><br><br><br><br>
+	
+	{% endif %}
+	</div>
+	</div>
+{% endblock %}

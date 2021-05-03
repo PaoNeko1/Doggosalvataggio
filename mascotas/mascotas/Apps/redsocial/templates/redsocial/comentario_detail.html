@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<div class="container cuerpo" style="margin-bottom: -2%;">
+	<br><br>
+	<div class="letra-cuerpo">
+	<h1>Comentario</h1>
+	<br>	
+		<ul>
+			<li>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Autor: {{ comentariodolittle.usuario }}</p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Descripcion: {{ comentariodolittle.descripcion }}</a></p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Comentario: {{comentariodolittle.comentario}}</p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Fecha: {{comentariodolittle.fecha}}</p><br><br>
+			</li>
+		</ul>
+	</div>
+	</div>
+{% endblock %}

@@ -4,11 +4,93 @@
 
     {% load static %}
 
-      
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            
+    <!--Librerias de lightbox los css-->
+    {% load static %}
+    
+        <link rel="stylesheet" href="{% static 'css/lightbox.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+        
       
     
-     
+        {% block title %}<title>Galeria Copa Libertadores</title>{% endblock %}
+        
     
+        
+        
+        
+      </style> 
+          
+      </head>
+      
+    
+      <body>
+        <br>
+        <br>
+        
+    
+        <div class= "container">
+          <hr>
+          <h1>Los Ultimos Campeones en estos ultimos 3 Años son: </h1>
+          <hr>
+          <div class="row">
+            <div class="col-lg-4">
+             <br>
+              <img src="{% static 'img/flamengo2.png'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
+              <br>
+              <br>
+              <h2>Club Flamengo</h2>
+              
+              <p>Flamengo Club Brasileño campeón de la CONMEBOL Libertadores 2019! Después de 38 años de su único título continental, 
+                Flamengo volvió a proclamarse campeón de la CONMEBOL Libertadores al vencer 2-1 a River Plate este sábado en Lima</p>
+      
+              <p><a class="btn btn-secondary" href="https://www.marca.com/claro-mx/futbol-internacional/copa-libertadores/final/2019/11/23/5dd9ac8d268e3ebd558b45b0.html" target="_blank" role="button">Saber Más &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+              <br>
+              <img src="{% static 'img/river1.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
+              <br>
+              <br>
+      
+              <h2>River Plate</h2>
+              <p>
+                Esta edición será recordada por la histórica final disputada en el 2018 entre los clubes argentinos Boca Juniors y River Plate, 
+                una de las rivalidades más grandes del mundo, y por la decisión de la Conmebol de trasladar la final de vuelta a tierras europeas. 
+                El campeón fue River Plate, al derrotar por un global de 5-3.
+              </p>
+              <p><a class="btn btn-secondary" href="http://www.conmebol.com/es/river-plate-campeon" target="_blank" role="button"> Saber Más &raquo;</a></p>
+            </div>
+      
+            <div class="col-lg-4">
+              <br>
+              <img src="{% static 'img/gremio1.png'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140" height="140" >
+              <br>
+              <br>
+      
+              <h2>Gremio</h2>
+              <p>
+                Gremio de Brasil se consagró la noche del miércoles 29/11/2017 campeón por tercera vez de la CONMEBOL Libertadores Bridgestone, al derrotar al argentino Lanús 2-1 en el estadio La Fortaleza frente a 45.000 hinchas al sur de Buenos Aires.
+                ​</p>
+              <p><a class="btn btn-secondary" href="https://elpais.com/deportes/2017/11/30/actualidad/1512007519_262271.html" target="_blank" role="button">Saber Más &raquo;</a></p>
+            </div>
+          </div>
+    
+        <hr class="featurette-divider">
+        </div>
+        <div class="container">
+          <h1>Momentos Inmemorables: </h1>
+          <hr>
+    
+        </div>
 
 
- {% endblock %}
+    {% endblock %}

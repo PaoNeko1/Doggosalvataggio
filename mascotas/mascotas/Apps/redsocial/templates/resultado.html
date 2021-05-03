@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 {% load static %}
 	<title></title>
 
@@ -159,10 +160,12 @@ height: 80%;
 </div>
 
 {% for f in mascotas %}
+
 <div id="{{f.Nombre}}" class="container cuadro">
 <h5>Nombre: {{f.Nombre}}</h5>
 <h5>Tipo: {{f.Tipo}}</h5>
 <img  style="border-radius: 20%; border: silver 5px solid;"  src="{{f.foto.url}}" height="100" width="100">
+
 </div>
 {% endfor %}
 

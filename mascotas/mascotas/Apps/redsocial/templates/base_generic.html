@@ -40,6 +40,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  
 
 
 
@@ -66,8 +67,10 @@
         <h2><span class="rotating">Somos tu solucion Introducete mas a fondo con nosotros</span></h2>
 
         <div class="actions">
-          <a href="#about" class="btn-get-started">Empezar</a>
-          <a href="#services" class="btn-services">Nuestros Servicios</a>
+          <a href="/index/#about" class="btn-get-started">Empezar</a>
+          <a href="/index/#services" class="btn-services">Nuestros Servicios</a>
+          
+
         </div>
       </div>
     </div>
@@ -86,13 +89,14 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="{% url 'inicio' %}">inicio</a></li>
-          <li><a href="{% url 'inicio' %}">Sobre Nosotros</a></li>
-         <!-- <li><a href="#services">Servicios</a></li>-->
+          <li class="menu-active" ><a href="{% url 'inicio' %}">inicio</a></li>
+          
+          <li ><a href="{% url 'contacto' %}">Contáctanos</a></li>
+
           <li><a href="{% url 'college' %}">Collage</a></li>
           <li><a href="{% url 'testimonio' %}">Testimonios</a></li>
-          <li><a href="{% url 'contacto' %}">Contactanos</a></li>
-          <li><a href="{% url 'login' %}">Ingresa</a></li>
+
+          <li  ><a href="{% url 'login' %}">Ingresa</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container terminacion -->
@@ -143,6 +147,8 @@
   <script src="{% static 'js/formulario.js' %}"></script>
   <script src="{% static 'js/mascota.js' %}"></script>
   <script src="{% static 'contactform/contactform.js' %}"></script>
+
+  
 
 
 </body>
