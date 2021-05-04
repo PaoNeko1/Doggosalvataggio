@@ -47,6 +47,7 @@ if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' 
   document.getElementById('lotro').style.color='white';
   document.getElementById('ltipo').style.color='white';
   document.getElementById('formulario').style.backgroundColor='rgba(0,1,1,0.5)';
+  document.getElementById('verificacolor').value='b'
 
 var sel = document.getElementById("combo");  
 var l = false;
@@ -73,6 +74,66 @@ document.getElementById('cuerpa').background="{% static 'images/fondo1.jpg' %}";
     document.getElementById('tmasc').style.color='black';
     document.getElementById('lotro').style.color='black';
   document.getElementById('ltipo').style.color='black';
+  document.getElementById('verificacolor').value='w'
+
+var sel = document.getElementById("combo");  
+var l = false;
+for (var i = 0; i < sel.length; i++) {
+    var opt = sel[i];
+document.getElementById(opt.value).style.backgroundColor='rgba(250, 223, 223,0.4)';
+document.getElementById(opt.value).style.color='black';
+}
+
+}
+
+
+ 
+}
+function cambiarcolor2(){
+if(document.getElementById('verificacolor').value=='b')
+{
+ document.getElementById('cuerpa').background="{% static 'images/fondo2.jpg' %}";
+ 
+  document.getElementById('sols').src="{% static 'images/sol.png' %}";
+  document.getElementById('sols').style.border='black 2px solid';
+  document.getElementById('infou').style.color='white';
+  document.getElementById('infou').style.backgroundColor='rgba(0,1,1,0.5)';
+  document.getElementById('txtnom').style.color='white';
+  document.getElementById('txtnom').style.backgroundColor='black';
+   document.getElementById('ifile').style.color='white';
+  document.getElementById('ifile').style.backgroundColor='black';
+  document.getElementById('tmasc').style.color='white';
+  document.getElementById('lotro').style.color='white';
+  document.getElementById('ltipo').style.color='white';
+  document.getElementById('formulario').style.backgroundColor='rgba(0,1,1,0.5)';
+  document.getElementById('verificacolor').value='b'
+
+var sel = document.getElementById("combo");  
+var l = false;
+for (var i = 0; i < sel.length; i++) {
+    var opt = sel[i];
+document.getElementById(opt.value).style.backgroundColor='rgba(0,1,1,0.5)';
+document.getElementById(opt.value).style.color='white';
+}
+
+}
+else
+{
+document.getElementById('cuerpa').background="{% static 'images/fondo1.jpg' %}";
+
+   document.getElementById('sols').src="{% static 'images/wsol.png' %}";
+    document.getElementById('sols').style.border='white 2px solid'
+    document.getElementById('infou').style.color='black';
+    document.getElementById('infou').style.backgroundColor='rgba(250, 223, 223,0.4)';
+    document.getElementById('formulario').style.backgroundColor='rgba(250, 223, 223,0.4)';
+    document.getElementById('txtnom').style.color='black';
+  document.getElementById('txtnom').style.backgroundColor='white';
+   document.getElementById('ifile').style.color='black';
+  document.getElementById('ifile').style.backgroundColor='white';
+    document.getElementById('tmasc').style.color='black';
+    document.getElementById('lotro').style.color='black';
+  document.getElementById('ltipo').style.color='black';
+  document.getElementById('verificacolor').value='w'
 
 var sel = document.getElementById("combo");  
 var l = false;
@@ -125,7 +186,7 @@ height: 80%;
 }	
 
 </style>	
-<body id="cuerpa" background="{% static 'images/fondo1.jpg' %}">
+<body onload="cambiarcolor2()" id="cuerpa" >
 	     <select hidden  id="combo">
 {% if mascotas  %}
 {% for x in mascotas %}
@@ -146,6 +207,7 @@ height: 80%;
 <br>
 
 <img id="sols" style=" margin-left: 20px; cursor: pointer; border-radius: 50%;  border: white 2px solid;" onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
+
 <img id="sols" style=" margin-left: 20px; cursor: pointer ; float: left; "width="25" height="25" src="{% static 'images/chatico.png' %}">
 
 <div class="container cuadro2" style="text-align: right;" >
@@ -157,6 +219,7 @@ height: 80%;
 <div hidden class="container cuadro"  id="formulario">
 	<form action="/registrar/" method="POST" enctype="multipart/form-data">
 		{% csrf_token%}
+		<input hidden type="text" id="verificacolor" value="{{coll}}" name="verificacolor">
 	<br>
 	<input name="txtnom" id="txtnom"  type="text" class="form-control" placeholder="Nombre">
 	<br>
@@ -173,8 +236,7 @@ height: 80%;
 	<input id="ifile"  name="ifile" type="file" class="form-control" >
 	<img hidden width="20" height="20" src="{% static 'images/gatoico.png' %}">
 	<br>
-	<button style=" margin-right: 10%;" onclick="saves()"  type="button" class="btn btn-primary">Guardar</button>
-	<input type="submit" name="enciar">
+	<input style=" margin-right: 10%;"  class="btn btn-primary" type="submit" value="Guardar" name="enviar">
 	<br>
 	</form>
 </div>

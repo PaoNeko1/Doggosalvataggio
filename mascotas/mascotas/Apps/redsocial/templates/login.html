@@ -16,6 +16,8 @@ if(document.getElementById('cuerpa').background!="{% static 'images/fondo2.jpg' 
   document.getElementById('txtcon').style.color='white';
   document.getElementById('sols').src="{% static 'images/sol.png' %}";
   document.getElementById('sols').style.border='black 2px solid'
+  document.getElementById('verificacolor').value='b'
+
 
 }
 else
@@ -27,6 +29,7 @@ document.getElementById('txtrut').style.backgroundColor='white';
    document.getElementById('txtrut').style.color='black';
    document.getElementById('sols').src="{% static 'images/wsol.png' %}";
     document.getElementById('sols').style.border='white 2px solid'
+    document.getElementById('verificacolor').value='w'
 }
 
 
@@ -54,7 +57,8 @@ document.getElementById("mensajeerror").hidden=true;}
 }
    if(l==true){
     var valor=document.getElementById("txtrut").value;
-    document.location.href="/res/"+valor+"/";}
+    var valor2=document.getElementById("verificacolor").value;
+    document.location.href="/res/"+valor+"/"+valor2+"/";}
 else
 {
     document.getElementById("mensajeerror").hidden=false;
@@ -131,6 +135,7 @@ height: 80%;
 	<title> Iniciar sesion</title>
 <body id="cuerpa"  background="{% static 'images/fondo1.jpg' %}">
      <img id="sols" style=" margin-left: 20px;  position: absolute; border-radius: 50%;cursor: hand;   border: white 2px solid; " onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
+     <input hidden type="text" id="verificacolor" value="w" name="">
 
 	<div class="container rounded" id="cuadro">
         <select hidden  id="combo">

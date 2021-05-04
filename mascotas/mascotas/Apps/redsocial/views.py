@@ -81,10 +81,12 @@ def pet_form(request):
     
     return render(request,'p_usuario.html', data )
 
-def resultado(request,rut):
+def resultado(request,rut,color):
+
 	pe= Usuario.objects.get(Rut=rut)
 	mas= Pet.objects.filter(Amo=rut)
-	context = {'due': pe,'mascotas':mas}
+
+	context = {'due': pe,'mascotas':mas, 'coll':color}
 	return render(request, 'resultado.html', context)
 
 
@@ -107,12 +109,13 @@ def registrar(request):
 
     aas= request.FILES.get('ifile')
     nom= request.POST.get('txtnom')
+    color= request.POST.get('verificacolor')
     ttip= request.POST.get('vtipo')
     elrut=request.POST.get('vdueño')
     pe= Usuario.objects.get(Rut=elrut)
     eser= Pet(Nombre=nom,Tipo=ttip,Amo=pe,foto=aas)
     eser.save()
-    context = {'due': pe}
+    context = {'due': pe,'coll':color}
     return render(request,'pruu.html',context)
 
     

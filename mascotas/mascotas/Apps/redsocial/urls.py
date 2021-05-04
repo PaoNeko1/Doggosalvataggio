@@ -11,7 +11,7 @@ urlpatterns = [
     path('veterinarios/', views.veterinarios, name='veterinarios'),
     path('implementos/', views.animalcosas, name='animalcosas'),
 
-	path('res/<rut>/', views.resultado ),
+	path('res/<rut>/<color>/', views.resultado ),
 	path('registrar/', views.registrar ),
     path('testimonio/', views.testimonio, name='testimonio'),
     path('contacto/', views.contacto, name='contacto'),

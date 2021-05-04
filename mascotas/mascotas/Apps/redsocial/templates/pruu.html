@@ -6,12 +6,14 @@
 <script type="text/javascript">
 	function re(){
 	var valor= document.getElementById("txtt").value;
-document.location.href="/res/"+valor+"/";
+	var valor2= document.getElementById("verificacolor").value;
+document.location.href="/res/"+valor+"/"+valor2+"/";
 	};
 </script>	
 </head>
 <body onload="re()">
 	<input hidden id="txtt" value="{{due.Rut}}" type="text" name="">
+	<input hidden type="text" id="verificacolor" value="{{coll}}" name="verificacolor">
 
 </body>
 </html>
