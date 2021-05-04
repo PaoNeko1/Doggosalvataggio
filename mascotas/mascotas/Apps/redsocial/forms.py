@@ -1,5 +1,6 @@
 from django import forms
-from .models import Usuario, Pet, Comentario
+from .models import Usuario, Pet, Comenta
+
 
 class FormUsuarios(forms.ModelForm):
 
@@ -15,9 +16,8 @@ class FormPet(forms.ModelForm):
         fields = '__all__'
 
 
-
 class FormComentario(forms.ModelForm):
     class Meta:
-        model = Comentario
+        model = Comenta
         fields = '__all__'
     

@@ -26,11 +26,13 @@ class Pet(models.Model):
 	def __str__(self):
 		return self.Nombre
 
-class Comentario(models.Model):
-	Nombre  = models.ForeignKey(Usuario,null=False,blank=False,on_delete=models.PROTECT) 
+class Comenta(models.Model):
+	usu = models.ForeignKey(Usuario,null=False,blank=False,on_delete=models.PROTECT)
+	id_comentario = models.AutoField(primary_key=True)
 	descripcion = models.CharField(max_length=50,null=True)
 	comentario = models.TextField(max_length=1000,null=True)
 	def __str__(self):
-		return self.Nombre
+		return str(self.id_comentario)
+
 
 
