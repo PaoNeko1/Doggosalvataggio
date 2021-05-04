@@ -119,4 +119,13 @@ def registrar(request):
     context = {'due': pe,'coll':color}
     return render(request,'pruu.html',context)
 
+def eliminarp(request,rut,color,nombrep):
+    mas= Pet.objects.get(Nombre=nombrep)
+    mas.delete()
+    pe= Usuario.objects.get(Rut=rut)
+    context = {'due': pe,'coll':color}
+
+    return render(request,'pruu.html',context)
+
+
     

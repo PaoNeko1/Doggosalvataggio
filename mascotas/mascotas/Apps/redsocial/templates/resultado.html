@@ -244,7 +244,7 @@ height: 80%;
 {% for f in mascotas %}
 
 <div id="{{f.Nombre}}" class="container cuadro">
-	<button style="float: right;" >eliminar</button>
+	<a style="float: right;"  href="{{f.Nombre}}">Eliminar</a>
 	<button style="float: right;" >editar</button>
 <h5>Nombre: {{f.Nombre}}</h5>
 <h5>Tipo: {{f.Tipo}}</h5>
