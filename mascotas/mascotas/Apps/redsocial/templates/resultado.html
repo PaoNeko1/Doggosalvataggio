@@ -225,13 +225,13 @@ height: 80%;
 	<br>
 	<label id="ltipo">Tipo de mascota</label>
 	<br>
-	<input onclick="c1()" type="radio" name="raded">
+	<input onclick="c1()" type="radio" checked name="raded">
 	<img height="25" width="25" src="{% static 'images/perroico.png' %}">
 	<input onclick="c2()"type="radio" name="raded">
 	<img height="25" width="25" src="{% static 'images/gatoico.png' %}">
 	<input onclick="c3()" type="radio" name="raded">
 	<label id="lotro">Otro</label>
-	<input hidden type="text" id="vtipo" name="vtipo">
+	<input hidden type="text" value="Perro" id="vtipo" name="vtipo">
 	<input hidden type="text" value="{{due.Rut}}" id="vdueño" name="vdueño">
 	<input id="ifile"  name="ifile" type="file" class="form-control" >
 	<img hidden width="20" height="20" src="{% static 'images/gatoico.png' %}">
@@ -243,12 +243,12 @@ height: 80%;
 
 {% for f in mascotas %}
 
-<div id="{{f.Nombre}}" class="container cuadro">
-	<a style="float: right;"  href="{{f.Nombre}}">Eliminar</a>
-	<button style="float: right;" >editar</button>
-<h5>Nombre: {{f.Nombre}}</h5>
-<h5>Tipo: {{f.Tipo}}</h5>
-<img  style="border-radius: 20%; border: silver 5px solid;"  src="{{f.foto.url}}" height="100" width="100">
+<div id="{{f.Nombre}}" class="container cuadro rounded">
+	<a class="btn btn-danger" style="float: right; margin-left: 10px; "  href="{{f.Nombre}}">Eliminar</a>
+	<a class="btn btn-warning" style="float: right; cursor: pointer; "  >Editar</a>
+<h5 style="text-align: center;" >Nombre: {{f.Nombre}}</h5>
+<h5 style="text-align: center;">Tipo: {{f.Tipo}}</h5>
+<img  style="border-radius: 20%; border: silver 5px solid;  "  src="{{f.foto.url}}" height="100" width="100">
 
 </div>
 {% endfor %}
