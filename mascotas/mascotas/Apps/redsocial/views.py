@@ -1,11 +1,12 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from .models import Usuario, Pet, Comentario
+from .models import Usuario, Pet, Comenta
 from django.urls import reverse_lazy
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .forms import FormUsuarios, FormPet, FormComentario
+
 
 
 # Create your views here.

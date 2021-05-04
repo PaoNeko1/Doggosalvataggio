@@ -17,6 +17,7 @@ $(document).ready(function(){
     $('#id_Tipo_usuario').prop('class','form-control')
     $('#id_Tipo_usuario option[selected]').html('Ingresa tu Usuario')
     $('#id_descripcion').prop('class','form-control')
-    $('#id_descripcion').prop('placeholder','Ingresa tu Comentario')
-
+    $('#id_descripcion').prop('placeholder','Ingresa una descripción')
+    $('#id_comentario').prop('class','form-control')
+    $('#id_comentario').prop('placeholder','Ingresa tu comentario')
 });
