@@ -103,4 +103,16 @@ def comentario_form(request):
             data['form'] = formu1_comentario
     
     return render(request,'comentario.html', data )
+def registrar(request):
 
+    aas= request.FILES.get('ifile')
+    nom= request.POST.get('txtnom')
+    ttip= request.POST.get('vtipo')
+    elrut=request.POST.get('vdueño')
+    pe= Usuario.objects.get(Rut=elrut)
+    eser= Pet(Nombre=nom,Tipo=ttip,Amo=pe,foto=aas)
+    eser.save()
+    context = {'due': pe}
+    return render(request,'pruu.html',context)
+
+    

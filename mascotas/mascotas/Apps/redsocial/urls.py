@@ -12,6 +12,7 @@ urlpatterns = [
     path('implementos/', views.animalcosas, name='animalcosas'),
 
 	path('res/<rut>/', views.resultado ),
+	path('registrar/', views.registrar ),
     path('testimonio/', views.testimonio, name='testimonio'),
     path('contacto/', views.contacto, name='contacto'),
     path('formulario/', views.usuario, name='formulario'),

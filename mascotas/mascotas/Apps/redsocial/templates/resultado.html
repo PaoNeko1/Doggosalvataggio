@@ -9,6 +9,19 @@
 
 <script type="text/javascript">
 
+function c1(){
+document.getElementById('vtipo').value="Perro";
+};
+
+function c2(){
+document.getElementById('vtipo').value='Gato';	
+};
+
+function c3(){
+document.getElementById('vtipo').value='Otro';	
+};
+
+
 function saves(){
 
 
@@ -133,6 +146,7 @@ height: 80%;
 <br>
 
 <img id="sols" style=" margin-left: 20px; cursor: pointer; border-radius: 50%;  border: white 2px solid;" onclick="cambiarcolor()"width="25" height="25" src="{% static 'images/wsol.png' %}">
+<img id="sols" style=" margin-left: 20px; cursor: pointer ; float: left; "width="25" height="25" src="{% static 'images/chatico.png' %}">
 
 <div class="container cuadro2" style="text-align: right;" >
 	<img id="btnform" onclick="aparecerform()" style="border-radius: 50%;  cursor: pointer;" class="rounded circle
@@ -141,27 +155,35 @@ height: 80%;
 <h1 id="tmasc" style="text-align: center;" >Mascotas</h1>
 
 <div hidden class="container cuadro"  id="formulario">
+	<form action="/registrar/" method="POST" enctype="multipart/form-data">
+		{% csrf_token%}
 	<br>
-	<input id="txtnom"  type="text" class="form-control" placeholder="Nombre">
+	<input name="txtnom" id="txtnom"  type="text" class="form-control" placeholder="Nombre">
 	<br>
 	<label id="ltipo">Tipo de mascota</label>
 	<br>
-	<input type="radio" name="raded">
+	<input onclick="c1()" type="radio" name="raded">
 	<img height="25" width="25" src="{% static 'images/perroico.png' %}">
-	<input type="radio" name="raded">
+	<input onclick="c2()"type="radio" name="raded">
 	<img height="25" width="25" src="{% static 'images/gatoico.png' %}">
-	<input type="radio" name="raded">
+	<input onclick="c3()" type="radio" name="raded">
 	<label id="lotro">Otro</label>
-	<input id="ifile"   type="file" class="form-control" >
+	<input hidden type="text" id="vtipo" name="vtipo">
+	<input hidden type="text" value="{{due.Rut}}" id="vdueño" name="vdueño">
+	<input id="ifile"  name="ifile" type="file" class="form-control" >
 	<img hidden width="20" height="20" src="{% static 'images/gatoico.png' %}">
 	<br>
 	<button style=" margin-right: 10%;" onclick="saves()"  type="button" class="btn btn-primary">Guardar</button>
+	<input type="submit" name="enciar">
 	<br>
+	</form>
 </div>
 
 {% for f in mascotas %}
 
 <div id="{{f.Nombre}}" class="container cuadro">
+	<button style="float: right;" >eliminar</button>
+	<button style="float: right;" >editar</button>
 <h5>Nombre: {{f.Nombre}}</h5>
 <h5>Tipo: {{f.Tipo}}</h5>
 <img  style="border-radius: 20%; border: silver 5px solid;"  src="{{f.foto.url}}" height="100" width="100">
