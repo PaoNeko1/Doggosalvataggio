@@ -231,13 +231,56 @@ height: 80%;
 		" width="50" height="50" src="{% static 'images/plusico.png' %}">
 </div>	
 <h1 id="tmasc" style="text-align: center;" >Mascotas</h1>
+
+
+<div  class="container cuadro rounded" style=" height: 200px; float: right; width: 20%; overflow: scroll;"  id="comentarioslistos" >
+
+	{% for x in Comentaritos %}
+<div style="color: gray;" class="container  rounded">
+	<div class="row"  >
+	<img width="20" height="20" src="{% static 'images/userico.png' %}">
+	<h5>{{x.usu}}</h5>
+	</div>
+
+</div>	
+
+<div style="color: blue;" class="container  rounded">
+	<h5>{{x.descripcion}}</h5>
+
+</div>
+<div  class="container  rounded">
+	<h5>{{x.comentario}}</h5>
+
+</div>
+{% endfor %}
+	
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div hidden class="container cuadro rounded" style="float: left; width: 20%;"  id="formcomentario" >
+	<form action="/comentar/" method="POST" enctype="multipart/form-data">
+		{% csrf_token%}
+	<input hidden type="text" id="verificacolor" value="{{coll}}" name="verificacolor">
 	<br>
 	<input name="txtasunto" id="txtasunto"  type="text" class="form-control" placeholder="Asunto">
 	<br>
-	<textarea style="width: 90%;" id="txtar"></textarea>
-	<a class="btn btn-primary" style="float: right; margin-left: 10px; ">Enviar</a>
+	<input hidden type="text" value="{{due.Rut}}" id="vdueño2" name="vdueño2">
+	<textarea style="width: 90%;" name="txtar" id="txtar"></textarea>
+	<input style=" margin-right: 10%;"  class="btn btn-primary" type="submit" value="Enviar" name="enviar">
 	<img width="220" height="220" src="{% static 'images/mann.gif' %}">
+	</form>
 	
 </div>
 

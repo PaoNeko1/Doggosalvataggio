@@ -14,6 +14,7 @@ urlpatterns = [
 	path('res/<rut>/<color>/', views.resultado ),
 	path('res/<rut>/<color>/<nombrep>', views.eliminarp ),
 	path('registrar/', views.registrar ),
+	path('comentar/', views.comentar ),
     path('testimonio/', views.testimonio, name='testimonio'),
     path('contacto/', views.contacto, name='contacto'),
     path('formulario/', views.usuario, name='formulario'),
