@@ -13,7 +13,6 @@ urlpatterns = [
 
 	path('res/<rut>/<color>/', views.resultado ),
 	path('registrar/', views.registrar ),
-    path('testimonio/', views.testimonio, name='testimonio'),
     path('contacto/', views.contacto, name='contacto'),
     path('formulario/', views.usuario, name='formulario'),
     path('login/', views.login, name='login'),

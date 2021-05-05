@@ -53,9 +53,6 @@ def animalcosas(request):
 
     return render(request, 'animalcosas.html', )
 
-def testimonio(request):
-
-    return render(request, 'testimonio.html', )
 
 
 def contacto(request):

@@ -2,56 +2,223 @@
 
 {% block content %}
 
-    {% load static %}
 
-  <!---->
-  <section id="testimonial" class="wow fadeInUp delay-05s">
-    <div class="bg-testicolor">
-      <div class="container section-padding">
-        <div class="row">
-          <div class="testimonial-item">
-            <ul class="bxslider">
-              <li>
-                <blockquote>
-                  <img src="img/thumb.png" class="img-responsive">
-                  <p>Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may not be another. </p>
-                </blockquote>
-                <small>Shaun Paul, Client</small>
-              </li>
-              <li>
-                <blockquote>
-                  <img src="img/thumb.png" class="img-responsive">
-                  <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
-                </blockquote>
-                <small>Marry Smith, Client</small>
-              </li>
-              <li>
-                <blockquote>
-                  <img src="img/thumb.png" class="img-responsive">
-                  <p>Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may not be another.</p>
-                </blockquote>
-                <small>Vivek Singh, Client</small>
-              </li>
-              <li>
-                <blockquote>
-                  <img src="img/thumb.png" class="img-responsive">
-                  <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
-                </blockquote>
-                <small>John Doe, Client</small>
-              </li>
-            </ul>
-          </div>
-        </div>
+{% load static %}
+
+
+<br>
+
+<br><br>
+<div class="container wow fadeInUp">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="section-title">Implementos Para Tus Animales</h3>
+      <div class="section-title-divider"></div>
+      <p class="section-description">Encontrara un apartado general de implementos que le servirian y que deberias tomar en cuenta en
+        el cuidado de tu mascota 🐶🐱:
+      </p>
+    </div>
+  </div>
+
+
+  <hr class="featurette-divider">
+  
+
+  
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Las Transportadoras ✨: <span class="text-muted">Seguridad para tu animal.</span>
+      </h2>
+      <br>
+      <p class="lead"> Estos accesorios son indispensables para que la mascota permanezca segura en traslados. 
+        También puede usarse en el hogar cuando se requiere mantener a la mascota confinada en lapsos cortos de tiempo.</p>
+      <br>
+      <p><a class="btn btn-lg btn-secondary" href="https://www.clubdeperrosygatos.cl" target="_blank"
+        role="button">Saber Más</a></p>
+      
+    </div>
+    <div class="col-md-5">
+      <img src="{% static 'img/imple/transportadora.jpg'%}" svg
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded-circle" width="600" height="600">
+
+    </div>
+    <br>
+    <br>
+
+  </div>
+
+  <hr class="featurette-divider">
+
+  <br><br>
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">Juguetes para Mascotas ✨: <span class="text-muted">Diversión.</span></h2>
+      <br>
+      <p class="lead">lo mejor es que cada mascota tenga una variedad en juguetes, para que no se aburran.
+        Se aconseja para perros tener al menos una pelota, hueso de hilo, hueso de carnaza y algún juguete que involucre la participación del dueño 
+        (puede ser frisbee, juguetes tipo Kong donde el dueño rellena el juguete, entre otros).</p>
+      <br>
+
+      <p><a class="btn btn-lg btn-secondary" href="https://www.clubdeperrosygatos.cl" target="_blank"
+        role="button">Saber Más</a></p>
+      
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img src="{% static 'img/imple/puerda.jpg'%}"
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded-circle" width="500" height="500">
+    </div>
+
+  </div>
+  <br>
+    <br>
+    
+
+
+  <hr class="featurette-divider">
+
+  <br><br>
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Accesorios para Salir ✨ : <span class="text-muted">Entre otras cosas más.</span></h2>
+      <br>
+      <p class="lead">
+        En este apartado podemos encontra diversos accesorios para tu animal partiendo por uno que serian los Collares y Correa, tambien en caso de salir 
+        en vehiculo puedes encontrar el Arnés para el cinturón de seguridad, por otra parte tambien debes tener en cuenta la ropa para perros, 
+        ya que protege del frío solo a ciertas razas pequeñas, de complexión delgada, de pelo muy corto y fino, mascotas mayores o enfermas.</p>
+
+      <br>
+      <p><a class="btn btn-lg btn-secondary" href="https://www.clubdeperrosygatos.cl" target="_blank"
+          role="button">Saber Más</a></p>
+    </div>
+    <div class="col-md-5">
+      <img src="{% static 'img/imple/ropaa.jpg'%}"
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded-circle" width="500" height="500">
+    </div>
+  </div>
+
+  
+
+
+</div>
+<br><br>
+
+
+  <div class="container">
+    <hr>
+    <h1> Otros Accesorios </h1>
+    <hr>
+    <div class="row">
+      <div class="col-lg-4">
+        <br>
+        <img src="{% static 'img/imple/Placa12.jpg'%}" style="border-radius: 50% imp !important;" class="rounded-circle" width="140" height="140">
+        <br>
+        <br>
+        <h2>Placas (Seguridad) ⭐: </h2>
+
+        <p>Las plaquitas con el nombre de la mascota y un numero de contacto mantienen a la mascota segura, 
+          ya que le dan una herramienta para volver a casa en caso de extraviarse. </p>
+
+            
+      </div>
+      <div class="col-lg-4">
+        <br>
+        <img src="{% static 'img/imple/Platos.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140"
+          height="140">
+        <br>
+        <br>
+
+        <h2>Platos de Acero Inoxidable ⭐: </h2>
+        <p>
+          Los platos de acero inoxidable son fáciles de lavar y difícilmente una mascota los destruye.
+        </p>
+       
+        
+      </div>
+
+      <div class="col-lg-4">
+        <br>
+        <img src="{% static 'img/imple/bebedero (2).jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140"
+          height="140">
+        <br>
+        <br>
+
+        <h2>Bebedero y Comedero ⭐ :  </h2>
+        <p>
+          Muy útiles cuando la mascota se queda sola por muchas horas. 
+          Es importante revisar diariamente que la cantidad de alimento y agua es la correcta, así como revisar la higiene de los recipientes.
+                    ​</p>
+       
       </div>
     </div>
-  </section>
 
-      
-      
+<br><br>
+    <!-- segunda opcion-->
+
+    <div class="container">
+
+     
+
+      <div class="row">
+        <div class="col-lg-4">
+          <br>
+          <img src="{% static 'img/imple/shampoo.jfif'%}" style="border-radius: 50% imp !important;" class="rounded-circle" width="140" height="140">
+          <br>
+          <br>
+          <h2>Shampoo ⭐: </h2>
+  
+          <p> Estos accesorios son indispensables para el lavado y el cuidado de tu mascota ya que Absorbe el exceso de sebo, permite eliminar la suciedad y desodoriza. 
+             </p>
+  
+              
+        </div>
+        <div class="col-lg-4">
+          <br>
+          <img src="{% static 'img/imple/peinee.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140"
+            height="140">
+          <br>
+          <br>
+  
+          <h2>Peines y Cepillos ⭐: </h2>
+          <p>
+            Estos peines se caracterizan por presentar púas metálicas, finas y juntas entre sí para poder arrastrar y recoger las heces. 
+            Son aptos para todo tipo de pelaje y se deben emplear pasándolos por el manto con cuidado y paciencia para evitar tirones.
+          </p>
+         
+          
+        </div>
+  
+        <div class="col-lg-4">
+          <br>
+          <img src="{% static 'img/imple/gel2.jpg'%}" alt="" svg class="bd-placeholder-img rounded-circle" width="140"
+            height="140">
+          <br>
+          <br>
+  
+          <h2>Gel para la limpieza dental ⭐:  </h2>
+          <p>
+            El gel actúa por si solo sobre las piezas dentales ablandando la placa y el sarro, 
+            basta con aplicarlo directamente con las yemas de tus dedos en cada extremo de la boca, basta y sobra un solo diente. 
+       ​</p>
+         
+        </div>
+      </div>
+    
 
 
 
 
+  <br><br>
+
+     <!--Informacion General-->
 
 
-    {% endblock %}
+
+  </div>
+
+</div>
+
+
+  {% endblock %}
