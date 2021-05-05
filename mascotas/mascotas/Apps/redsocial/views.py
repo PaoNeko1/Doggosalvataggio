@@ -81,11 +81,11 @@ def pet_form(request):
 
 def resultado(request,rut,color):
 
-	pe= Usuario.objects.get(Rut=rut)
-	mas= Pet.objects.filter(Amo=rut)
-
-	context = {'due': pe,'mascotas':mas, 'coll':color}
-	return render(request, 'resultado.html', context)
+    pe= Usuario.objects.get(Rut=rut)
+    mas= Pet.objects.filter(Amo=rut)
+    comens = Comenta.objects.order_by('-id_comentario')
+    context = {'due': pe,'mascotas':mas, 'coll':color,'Comentaritos':comens}
+    return  render(request,'resultado.html', context)
 
 
     #comentario o testimonio
@@ -115,5 +115,26 @@ def registrar(request):
     eser.save()
     context = {'due': pe,'coll':color}
     return render(request,'pruu.html',context)
+
+def comentar(request):
+
+    color= request.POST.get('verificacolor')
+    asunto= request.POST.get('txtasunto')
+    texto= request.POST.get('txtar')
+    elrut=request.POST.get('vdueño2')
+    pe= Usuario.objects.get(Rut=elrut)
+    c1= Comenta(usu=pe,descripcion=asunto,comentario=texto)
+    c1.save()
+    context = {'due': pe,'coll':color}
+    return render(request,'pruu.html',context)    
+
+def eliminarp(request,rut,color,nombrep):
+    mas= Pet.objects.get(Nombre=nombrep)
+    mas.delete()
+    pe= Usuario.objects.get(Rut=rut)
+    context = {'due': pe,'coll':color}
+
+    return render(request,'pruu.html',context)
+
 
     
